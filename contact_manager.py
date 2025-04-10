@@ -35,6 +35,15 @@ def update_contact():
         print("\nCONTACT UPDATED SUCCESSFULLY...")
     else:
         print("\nCONTACT NOT FOUND...")
+def search_contact():
+    query = input("Enter Number or Name to Search: ").lower()
+    found = False
+    for mono, name in contacts.items():
+        if query in mono or query in name.lower():
+            print(f"\nFound: {mono} - {name}")
+            found = True
+    if not found:
+        print("\nNO MATCH FOUND...")
 
 # Menu-driven loop
 while True:
@@ -43,7 +52,8 @@ while True:
     print("2. Add Contact")
     print("3. Delete Contact")
     print("4. Update Contact")
-    print("5. Exit")
+    print("5. Search Contact")
+    print("6. Exit")
     choice = input("Enter Your Choice (1-5): ")
 
     if choice == '1':
@@ -55,6 +65,8 @@ while True:
     elif choice == '4':
         update_contact()
     elif choice == '5':
+        search_contact()
+    elif choice == '6':
         print("\nExiting Contact Manager... Goodbye!")
         break
     else:
