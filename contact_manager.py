@@ -46,28 +46,31 @@ def search_contact():
         print("\nNO MATCH FOUND...")
 
 # Menu-driven loop
-while True:
-    print("\n------ CONTACT MANAGER ------")
-    print("1. Show Contacts")
-    print("2. Add Contact")
-    print("3. Delete Contact")
-    print("4. Update Contact")
-    print("5. Search Contact")
-    print("6. Exit")
-    choice = input("Enter Your Choice (1-5): ")
+try:
+    while True:
+        print("\n------ CONTACT MANAGER ------")
+        print("1. Show Contacts")
+        print("2. Add Contact")
+        print("3. Delete Contact")
+        print("4. Update Contact")
+        print("5. Search Contact")
+        print("6. Exit")
+        choice = input("Enter Your Choice (1-5): ")
 
-    if choice == '1':
-        show_contacts()
-    elif choice == '2':
-        add_contact()
-    elif choice == '3':
-        delete_contact()
-    elif choice == '4':
-        update_contact()
-    elif choice == '5':
-        search_contact()
-    elif choice == '6':
-        print("\nExiting Contact Manager... Goodbye!")
-        break
-    else:
-        print("\nINVALID CHOICE. PLEASE TRY AGAIN.")
+        if choice == '1':
+            show_contacts()
+        elif choice == '2':
+            add_contact()
+        elif choice == '3':
+            delete_contact()
+        elif choice == '4':
+            update_contact()
+        elif choice == '5':
+            search_contact()
+        elif choice == '6':
+            print("\nExiting Contact Manager... Goodbye!")
+            break
+        else:
+            print("\nINVALID CHOICE. PLEASE TRY AGAIN.")
+except KeyboardInterrupt:
+    print("\n\nProgram interrupted. Exiting Contact Manager... Goodbye!")
